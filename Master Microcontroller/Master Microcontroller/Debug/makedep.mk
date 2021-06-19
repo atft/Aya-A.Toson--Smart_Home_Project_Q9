@@ -2,21 +2,21 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
-DIO\MDIO_program.c
+DIO.c
 
-EEPROM\MEEPROM_program.c
+EEPROM.c
 
-Keypad\HKPD_program.c
+keypad_driver.c
 
-LCD\HLCD_program.c
+LCD.c
 
-LED\HLED_Program.c
+LED.c
 
-Master Code.c
+main.c
 
-Menu\AMENU_Program.c
+menu.c
 
-SPI\MSPI_Program.c
+SPI.c
 
-Timer\MTIMER_program.c
+timer_driver.c
 
