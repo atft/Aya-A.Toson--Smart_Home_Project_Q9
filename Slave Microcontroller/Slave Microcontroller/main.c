@@ -17,7 +17,7 @@
 #include "ADC_driver.h"
 #include "timer_driver.h"
 #include "APP_slave_Macros.h"
-//# define F_CPU 16000000UL
+# define F_CPU 16000000UL
 
 
 volatile uint16 required_temperature=24; // the required temperature which sent from Master with initial value 24
@@ -42,16 +42,16 @@ int main(void)
 	
 	uint8 request = DEFAULT_ACK;//the value that is received from the master
 	uint8 response = DEFAULT_ACK;//the values that is sent back to the master
-//	uint8 arr[10];
+	uint8 arr[10];
 	
 	while(1)
 	{
 		
 		/*********************************  Bluetooth COMMANDS ********************************/
-	//	UART_recieve_string(arr);
+		UART_recieve_string(arr);
 		
 		/*********************************   TURN ON COMMANDS ********************************/
-/*		if(compareString(arr,"room1on"))
+		if(compareString(arr,"room1on"))
 		{
 			LED_vTurnOn(ROOM1_PORT,ROOM1_PIN);//turn on the led of room 1
 		}
@@ -76,9 +76,9 @@ int main(void)
 		{
 			LED_vTurnOn(TV_PORT,TV_PIN);//turn on the led of the TV
 		}
-	*/	
+		
 		/*********************************   TURN OFF COMMANDS ********************************/
-	/*	else if(compareString(arr,"room1off"))
+		else if(compareString(arr,"room1off"))
 		{
 			LED_vTurnOff(ROOM1_PORT,ROOM1_PIN);//turn off the led of room 1
 		}
@@ -103,9 +103,9 @@ int main(void)
 		{
 			LED_vTurnOff(TV_PORT,TV_PIN);//turn off the led of the TV
 		}
-	*/	
+		
 		/*********************************   Set temperature   ********************************/
-	/*	else if (compareString(arr,"tempset"))
+		else if (compareString(arr,"tempset"))
 		{
 			UART_recieve_string(arr);//get the temperature from the terminal and store the temperature in required temperature
 			required_temperature = 	*arr;	
@@ -113,7 +113,7 @@ int main(void)
 		else
 		{
 		}
-*/		request = SPI_ui8TransmitRecive(DEFAULT_ACK);//wait for the master to start the transmitting
+		request = SPI_ui8TransmitRecive(DEFAULT_ACK);//wait for the master to start the transmitting
 		//ALL Messages are defined in STD_messages.h
 		switch (request)
 		{
